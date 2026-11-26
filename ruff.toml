@@ -1,0 +1,5 @@
+target-version = "py312"
+
+[lint.isort]
+known-third-party = ["astrbot", "web_router"]
+known-first-party = ["main"]

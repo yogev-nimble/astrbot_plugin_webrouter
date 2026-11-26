@@ -1,0 +1,13 @@
+name: astrbot_plugin_webrouter
+display_name: WebRouter 联网搜索
+short_desc: 通过 WebRouter 联网搜索和读取网页，无需 API Key 即可使用。
+desc: 为 AstrBot 提供 webrouter_search（联网搜索）和 webrouter_extract（网页读取）两个 LLM 工具，以及 /webrouter 搜索指令。WebRouter 是开源（Apache-2.0）的 Python 库，用同一个接口调用 Tavily、Exa、Brave、Firecrawl 等多家搜索服务，失败或无结果时自动切换。不填任何密钥也能使用；填入密钥后会优先使用对应服务。
+version: v0.1.0
+author: yogev-nimble
+repo: https://github.com/yogev-nimble/astrbot_plugin_webrouter
+category: integration
+astrbot_version: ">=4.16"
+tags:
+  - websearch
+  - search
+  - web

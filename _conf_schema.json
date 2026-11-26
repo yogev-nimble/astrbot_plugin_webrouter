@@ -1,0 +1,51 @@
+{
+  "provider": {
+    "type": "string",
+    "description": "搜索服务",
+    "hint": "留空或填 auto 时自动路由：先用已配置密钥的服务，再用免费服务，失败或无结果时切换到下一个。也可以填写单个服务名，例如 tavily、exa、brave。",
+    "default": "auto"
+  },
+  "provider_keys": {
+    "type": "dict",
+    "description": "服务密钥",
+    "hint": "键为服务名（如 tavily、exa、brave、firecrawl、nimble），值为该服务的 API Key。可留空：不填任何密钥也能搜索和读取网页。每个密钥只发送给对应的服务。完整服务列表见 https://docs.webrouter.net/providers",
+    "default": {}
+  },
+  "max_results": {
+    "type": "int",
+    "description": "默认搜索结果数量",
+    "hint": "模型未指定数量时使用，范围 1-20。",
+    "default": 5,
+    "slider": {
+      "min": 1,
+      "max": 20,
+      "step": 1
+    }
+  },
+  "timeout": {
+    "type": "int",
+    "description": "请求超时时间（秒）",
+    "default": 30,
+    "slider": {
+      "min": 5,
+      "max": 120,
+      "step": 5
+    }
+  },
+  "enable_extract": {
+    "type": "bool",
+    "description": "启用网页读取工具",
+    "hint": "启用后模型可调用 webrouter_extract 读取公开网页正文。",
+    "default": true
+  },
+  "max_content_chars": {
+    "type": "int",
+    "description": "网页正文最大返回字符数",
+    "default": 8000,
+    "slider": {
+      "min": 1000,
+      "max": 30000,
+      "step": 1000
+    }
+  }
+}
